@@ -59,4 +59,12 @@
     object-fit: cover;
     transition: transform 1.5s ease-in-out;
   }
+
+  @media (max-width: $mq-tablet) {
+    grid-column-end: span 2;
+
+    &.tall {
+      grid-row-end: span 1;
+    }
+  }
 }

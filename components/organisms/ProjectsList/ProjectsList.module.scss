@@ -10,4 +10,8 @@
   grid-auto-rows: 420px;
   gap: 2rem;
   grid-auto-flow: dense;
+
+  @media (min-width: $mq-desktop-hd) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
