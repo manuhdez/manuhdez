@@ -1,8 +1,19 @@
 @import './import/typography';
+@import './import/colors';
 
 html,
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'AirbnbCereal';
+  color: $rich-black;
+
+  &.dark {
+    color: $pearl-white;
+    background-color: $rich-black;
+  }
 }
