@@ -22,13 +22,9 @@
 
     li a {
       @include text_style('body-lg', 'medium');
-      @include link_hover(0);
+      @include link_hover(0, $success);
       text-decoration: none;
       color: $rich-black;
-
-      &:hover {
-        color: $success;
-      }
     }
   }
 

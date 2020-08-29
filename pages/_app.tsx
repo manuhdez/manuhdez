@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 
 // components
 import Navbar from '../components/molecules/Navbar/Navbar';
+import Footer from '../components/molecules/Footer/Footer';
 // styles
 import '../styles/global.scss';
 
@@ -11,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

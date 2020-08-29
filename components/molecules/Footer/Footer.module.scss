@@ -1,0 +1,50 @@
+@import '../../../styles/index';
+
+.footer {
+  padding: 4rem var(--padding-x-body);
+  padding-bottom: 2rem;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @media (max-width: $mq-phone) {
+    & > div {
+      flex-direction: column;
+    }
+  }
+}
+
+.contact_block {
+  width: 30%;
+  margin-bottom: 4rem;
+
+  @media (max-width: $mq-phone) {
+    width: 100%;
+  }
+}
+
+.social_links {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $mq-tablet) {
+    width: 50%;
+  }
+
+  @media (max-width: $mq-phone) {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 2rem;
+    color: $rich-black;
+    text-decoration: none;
+    @include link_hover(0, $success);
+  }
+}

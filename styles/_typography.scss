@@ -22,13 +22,17 @@ $font-weight: (
   font-weight: map-get($map: $font-weight, $key: $weight);
 }
 
-@mixin link_hover($space) {
+@mixin link_hover($space, $color) {
+  &:hover {
+    color: $color;
+  }
+
   &::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: $success;
+    background: $color;
     margin-top: $space;
     transition: width 300ms ease-out;
   }

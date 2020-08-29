@@ -22,6 +22,6 @@
   }
 
   a {
-    @include link_hover(-0.5rem);
+    @include link_hover(-0, $success);
   }
 }
