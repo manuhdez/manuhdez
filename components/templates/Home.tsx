@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '../molecules/Hero/Hero';
+import ProjectsList from '../organisms/ProjectsList/ProjecstList';
 
 export default function HomeTemplate() {
   return (
@@ -11,6 +12,7 @@ export default function HomeTemplate() {
 
       <main>
         <Hero />
+        <ProjectsList recents />
       </main>
     </>
   );

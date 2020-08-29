@@ -1,0 +1,62 @@
+@import '../../../styles/index';
+
+@mixin item_radius() {
+  border-radius: 10px;
+}
+
+@mixin item_tall() {
+  grid-row-end: span 2;
+}
+@mixin item_wide() {
+  grid-column-end: span 2;
+}
+
+.item {
+  height: 100%;
+  position: relative;
+  @include item_radius();
+  height: get_item_height(1);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  box-shadow: $card-shadow-dark;
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+  &.tall {
+    @include item_tall();
+  }
+
+  &.wide {
+    @include item_wide();
+  }
+
+  .item_data {
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+    padding: 3rem 2rem 1.5rem 2rem;
+    color: $pearl-white;
+    background: linear-gradient(transparent, $rich-black);
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  img {
+    @include item_radius();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    transition: transform 1.5s ease-in-out;
+  }
+}

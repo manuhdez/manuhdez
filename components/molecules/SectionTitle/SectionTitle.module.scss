@@ -1,7 +1,7 @@
 @import '../../../styles/index';
 
 .container {
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -10,6 +10,8 @@
   a,
   p {
     @include text_style('body-lg', 'medium');
+    width: auto;
+    display: inline-block;
 
     text-decoration: none;
     color: $rich-black;
@@ -17,5 +19,9 @@
     &:hover {
       color: $success;
     }
+  }
+
+  a {
+    @include link_hover(-0.5rem);
   }
 }
