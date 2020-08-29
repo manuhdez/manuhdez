@@ -1,0 +1,23 @@
+@import './airbnb-cereal-font';
+
+$font-size: (
+  'h1': 3.125rem,
+  'h2': 2.25rem,
+  'h3': 1.125rem,
+  'body-lg': 1rem,
+  'body': 0.9rem,
+  'body-sm': 0.7rem,
+);
+
+$font-weight: (
+  'light': 300,
+  'book': 400,
+  'medium': 500,
+  'bold': 600,
+  'extra-bold': 700,
+);
+
+@mixin text_style($size, $weight) {
+  font-size: map-get($map: $font-size, $key: $size);
+  font-weight: map-get($map: $font-weight, $key: $weight);
+}

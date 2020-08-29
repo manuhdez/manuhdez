@@ -1,5 +1,4 @@
-@import './import/typography';
-@import './import/colors';
+@import './index';
 
 html,
 * {
@@ -16,4 +15,58 @@ body {
     color: $pearl-white;
     background-color: $rich-black;
   }
+}
+
+:root {
+  // phone
+  --padding-x-body: 1.5rem;
+  --padding-y-section: 5rem;
+
+  // tablet
+  @media (min-width: $mq-tablet) {
+    --padding-x-body: 5.625rem;
+  }
+
+  // desktop
+  @media (min-width: $mq-desktop) {
+    --padding-x-body: 11.25rem;
+    --padding-y-section: 10rem;
+  }
+}
+
+/**
+* Defining text elements base styling
+**/
+h1 {
+  @include text_style('h1', 'extra-bold');
+  line-height: 112%;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  @include text_style('h2', 'extra-bold');
+  line-height: 112%;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  @include text_style('h3', 'bold');
+  margin-bottom: 1rem;
+}
+
+p,
+li,
+.body {
+  @include text_style('body', 'book');
+  margin-bottom: 0.5rem;
+}
+
+.body-lg {
+  @include text_style('body-lg', 'book');
+  margin-bottom: 0.5rem;
+}
+
+.body-sm {
+  @include text_style('body-sm', 'light');
+  margin-bottom: 0.5rem;
 }
