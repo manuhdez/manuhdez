@@ -21,3 +21,19 @@ $font-weight: (
   font-size: map-get($map: $font-size, $key: $size);
   font-weight: map-get($map: $font-weight, $key: $weight);
 }
+
+@mixin link_hover($space) {
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $success;
+    margin-top: $space;
+    transition: width 300ms ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
