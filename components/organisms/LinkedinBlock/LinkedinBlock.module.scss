@@ -1,0 +1,25 @@
+@import '../../../styles/index';
+
+.section {
+  padding: 6rem var(--padding-x-body);
+  background: $accent;
+
+  h2,
+  a {
+    width: 100%;
+    color: $rich-black;
+
+    @media (min-width: $mq-tablet) {
+      width: 50%;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    p {
+      @include text_style('body-lg', 'bold');
+    }
+  }
+}
