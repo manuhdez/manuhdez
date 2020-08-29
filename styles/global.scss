@@ -11,6 +11,11 @@ body {
   font-family: 'AirbnbCereal';
   color: $rich-black;
 
+  & *::selection {
+    background: $accent;
+    color: $rich-black;
+  }
+
   &.dark {
     color: $pearl-white;
     background-color: $rich-black;
