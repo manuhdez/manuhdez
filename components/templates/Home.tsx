@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Hero from '../molecules/Hero/Hero';
 import ProjectsList from '../organisms/ProjectsList/ProjecstList';
+import ToolsSection from '../organisms/ToolsSection/ToolsSection';
 import LinkedinBlock from '../organisms/LinkedinBlock/LinkedinBlock';
 
 export default function HomeTemplate() {
@@ -14,6 +15,7 @@ export default function HomeTemplate() {
       <main>
         <Hero />
         <ProjectsList recents />
+        <ToolsSection />
         <LinkedinBlock />
       </main>
     </>
