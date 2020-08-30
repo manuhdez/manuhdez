@@ -1,17 +1,11 @@
-import styles from './ProjectListItem.module.scss';
 import Link from 'next/link';
-
-export interface ProjectData {
-  id: number;
-  title: string;
-  image: string;
-  tags: string[];
-  size: string;
-  highlight: boolean;
-}
+import { ProjectData } from '../../../lib/projects';
+import styles from './ProjectListItem.module.scss';
 
 export default function ProjectListItem(props: ProjectData) {
   const { id, title, image, tags, size } = props;
+
+  const imageSrc = `/assets/images/covers/${image}`;
 
   return (
     <article className={`${styles.item} ${styles[size]}`}>
@@ -21,7 +15,7 @@ export default function ProjectListItem(props: ProjectData) {
       </div>
       <Link href={`/projects/${id}`}>
         <a>
-          <img loading="lazy" src={image} />
+          <img loading="lazy" src={imageSrc} />
         </a>
       </Link>
     </article>
