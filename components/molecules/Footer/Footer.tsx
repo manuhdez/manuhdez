@@ -1,3 +1,4 @@
+import BackToTop from '../../atoms/BackToTop/BackToTop';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
@@ -63,7 +64,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p>{`© ${currentYear} - Designed and built by manuhdez with react and Next.js`}</p>
+      <address>
+        {`© ${currentYear} - Designed and built by manuhdez with React and Next.js`}
+        <BackToTop />
+      </address>
     </footer>
   );
 }

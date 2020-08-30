@@ -16,6 +16,13 @@
       flex-direction: column;
     }
   }
+
+  address {
+    display: flex;
+    align-items: flex-end;
+    font-style: initial;
+    @include text_style('body', 'light');
+  }
 }
 
 .contact_block {

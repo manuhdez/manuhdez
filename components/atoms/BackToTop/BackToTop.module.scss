@@ -1,0 +1,41 @@
+@import '../../../styles/index';
+
+.back_top {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+  margin-left: auto;
+  outline: none;
+  overflow: hidden;
+  transform: translateY(12px);
+
+  span {
+    transition: opacity 0.5s ease-out, transform 0.3s ease-out;
+  }
+
+  span.text {
+    @include text_style('body', 'light');
+    margin-right: 0.5rem;
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  span.arrow {
+    transform: translateY(5px);
+  }
+
+  &:hover {
+    span.text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    span.arrow {
+      transform: translateY(0);
+    }
+  }
+}
