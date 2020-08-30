@@ -20,10 +20,12 @@ export default function ToolsSection() {
   };
 
   const getRows = (columnKey: string) => {
-    const listItems = tools[columnKey].map((item: string) => <li>{item}</li>);
+    const listItems = tools[columnKey].map((item: string) => (
+      <li key={item}>{item}</li>
+    ));
 
     return (
-      <ul>
+      <ul key={columnKey}>
         <li className={styles.column_title}>{columnKey}</li>
         {listItems}
       </ul>

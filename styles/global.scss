@@ -66,6 +66,10 @@ li,
   margin-bottom: 0.5rem;
 }
 
+p {
+  line-height: 160%;
+}
+
 .body-lg {
   @include text_style('body-lg', 'book');
   margin-bottom: 0.5rem;
