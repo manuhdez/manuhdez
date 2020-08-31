@@ -13,7 +13,7 @@ export default function HomePage({ projects }: HomePageProps) {
   return (
     <>
       <Head>
-        <title>Manu Hdez</title>
+        <title key="title">Manu Hdez</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

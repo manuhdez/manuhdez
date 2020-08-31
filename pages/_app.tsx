@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { AppProps } from 'next/app';
 
 // components
@@ -10,6 +11,11 @@ import '../styles/global.scss';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <html lang="en" />
+        <title key="title">Manu Hdez - Fullstack developer</title>
+        <meta name="description" content="Manu Hdez - Fullstack developer" />
+      </Head>
       <Navbar />
       <Component {...pageProps} />
       <Footer />
