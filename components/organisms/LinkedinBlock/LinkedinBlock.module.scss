@@ -6,10 +6,15 @@ $mq-tablet-xl: 820px;
 .section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   padding: 6rem var(--padding-x-body);
   background: $accent;
+
+  & *::selection {
+    background: $rich-black;
+    color: $pearl-white;
+  }
 
   @media (max-width: $mq-tablet-xl) {
     justify-content: center;
@@ -17,12 +22,26 @@ $mq-tablet-xl: 820px;
     align-items: center;
   }
 
-  h2 {
-    max-width: 100%;
-    color: $rich-black;
+  .texts {
+    h2 {
+      max-width: 100%;
+      color: $rich-black;
 
-    @media (min-width: $mq-tablet-xl) {
-      max-width: 50%;
+      @media (min-width: $mq-tablet-xl) {
+        max-width: 50%;
+      }
+    }
+
+    .email_link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: $rich-black;
+      @include link_underline(0, $rich-black);
+
+      &:hover {
+        color: $pearl-white;
+      }
     }
   }
 
