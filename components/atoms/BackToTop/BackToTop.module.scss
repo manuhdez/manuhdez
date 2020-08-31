@@ -11,7 +11,7 @@
   margin-left: auto;
   outline: none;
   overflow: hidden;
-  transform: translateY(12px);
+  // transform: translateY(12px);
 
   span {
     transition: opacity 0.5s ease-out, transform 0.3s ease-out;
@@ -25,16 +25,12 @@
   }
 
   span.arrow {
-    transform: translateY(5px);
+    font-size: 1.5rem;
   }
 
   &:hover {
     span.text {
       opacity: 1;
-      transform: translateY(0);
-    }
-
-    span.arrow {
       transform: translateY(0);
     }
   }

@@ -10,8 +10,8 @@ const navLinksData = [
     disabled: false,
   },
   {
-    route: '/#about',
-    title: 'About',
+    route: '/#contact',
+    title: 'Contact',
     disabled: false,
   },
   {

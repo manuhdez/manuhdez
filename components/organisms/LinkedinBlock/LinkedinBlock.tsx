@@ -2,18 +2,61 @@ import styles from './LinkedinBlock.module.scss';
 
 export default function LinkedinBlock() {
   return (
-    <section className={styles.section} id="about">
-      <h2>
-        If you want to connect with me or to know more about my profesional
-        experiences
-      </h2>
-      <a
-        href="https://www.linkedin.com/in/manuhdez/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <p>Click here to check my Linkedin profile ➡️ </p>
-      </a>
+    <section className={styles.section} id="contact">
+      <div className={styles.texts}>
+        <h2>Let's get in touch!</h2>
+        <h3>Feel free to say “Hi” on any of my socials</h3>
+      </div>
+      <div className={styles.social_links}>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/manuhdez/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Linkedin
+          </a>
+          <a
+            href="https://github.com/manuhdez"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Github
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://codepen.io/ManuHdez"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Codepen
+          </a>
+          <a
+            href="https://dribbble.com/manuhdez"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Dribbble
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://twitter.com/manuhdez_com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://www.instagram.com/manu_hdez/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Instagram
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
