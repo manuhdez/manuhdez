@@ -21,6 +21,12 @@
     align-items: center;
     font-style: initial;
     @include text_style('body', 'light');
+
+    @media (max-width: $mq-phone) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
