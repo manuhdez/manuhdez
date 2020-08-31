@@ -1,5 +1,7 @@
 @import '../../../styles/index';
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .section {
   padding: var(--padding-y-section) var(--padding-x-body);
 
@@ -15,6 +17,10 @@
 
   p {
     @include text_style('h3', 'book');
+
+    @media (max-width: $mq-phone) {
+      @include text_style('body-lg', 'book');
+    }
   }
 
   img {
@@ -24,5 +30,14 @@
     max-height: 700px;
     padding: 1.5rem 0;
     object-fit: contain;
+  }
+
+  pre {
+    border-radius: 5px !important;
+    box-shadow: $card-shadow-dark;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
   }
 }
