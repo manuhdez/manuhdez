@@ -6,12 +6,13 @@ export default function ProjectListItem(props: ProjectData) {
   const { id, title, image, tags, size } = props;
 
   const imageSrc = `/assets/images/covers/${image}`;
+  const tagsList = tags.slice(0, 3);
 
   return (
     <article className={`${styles.item} ${styles[size]}`}>
       <div className={styles.item_data}>
         <h3>{title}</h3>
-        <p>{tags.join(' - ')}</p>
+        <p>{tagsList.join(' - ')}</p>
       </div>
       <Link href={`/projects/${id}`}>
         <a>
