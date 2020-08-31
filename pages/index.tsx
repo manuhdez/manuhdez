@@ -1,48 +1,38 @@
 import Head from 'next/head';
-import styles from './index.module.scss';
+import Hero from '../components/molecules/Hero/Hero';
+import ProjectsList from '../components/organisms/ProjectsList/ProjecstList';
+import ToolsSection from '../components/organisms/ToolsSection/ToolsSection';
+import LinkedinBlock from '../components/organisms/LinkedinBlock/LinkedinBlock';
+import { getProjectsData, ProjectData } from '../lib/projects';
 
-const Home = () => (
-  <div className={styles.container}>
-    <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+interface HomePageProps {
+  projects: ProjectData[];
+}
 
-    <main>
-      <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+export default function HomePage({ projects }: HomePageProps) {
+  return (
+    <>
+      <Head>
+        <title>Manu Hdez</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-      <p className={styles.description}>
-        Get started by editing <code>pages/index.js</code>
-      </p>
+      <main>
+        <Hero />
+        <ProjectsList recents projects={projects} />
+        <ToolsSection />
+        <LinkedinBlock />
+      </main>
+    </>
+  );
+}
 
-      <div className={styles.grid}>
-        <a href="https://nextjs.org/docs" className={styles.card}>
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+export async function getStaticProps() {
+  const projects = getProjectsData();
 
-        <a href="https://nextjs.org/learn" className={styles.card}>
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/vercel/next.js/tree/master/examples"
-          className={styles.card}
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a href="https://vercel.com/import/nextjs" className={styles.card}>
-          <h3>Deploy &rarr;</h3>
-          <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
-      </div>
-    </main>
-  </div>
-);
-
-export default Home;
+  return {
+    props: {
+      projects,
+    },
+  };
+}

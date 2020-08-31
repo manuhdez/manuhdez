@@ -1,0 +1,47 @@
+@import '../../../styles/index';
+
+.hero {
+  padding: var(--padding-y-section) var(--padding-x-body);
+  background-color: $pearl-white;
+  background-image: url('/assets/images/hero/cover.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+
+  h1,
+  p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $mq-tablet) {
+      width: 50%;
+      max-width: 550px;
+      margin: initial;
+      margin-bottom: 1rem;
+    }
+  }
+
+  h1 {
+    @media (max-width: $mq-phone) {
+      @include text_style('h2', 'extra-bold');
+    }
+  }
+
+  p {
+    @include text_style('body', 'medium');
+
+    @media (min-width: $mq-phone) {
+      @include text_style('body-lg', 'book');
+    }
+  }
+}
+
+#{$dark-mode} .hero {
+  background-color: $pure-black;
+
+  h1,
+  p {
+    color: $pearl-white;
+  }
+}

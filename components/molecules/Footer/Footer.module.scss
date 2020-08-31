@@ -1,0 +1,34 @@
+@import '../../../styles/index';
+
+.footer {
+  padding: 2rem var(--padding-x-body);
+  background: $pearl-white;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: $mq-phone) {
+    & > div {
+      flex-direction: column;
+    }
+  }
+
+  address {
+    display: flex;
+    align-items: center;
+    font-style: initial;
+    @include text_style('body', 'light');
+  }
+}
+
+.contact_block {
+  width: 30%;
+  margin-bottom: 4rem;
+
+  @media (max-width: $mq-phone) {
+    width: 100%;
+  }
+}

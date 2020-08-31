@@ -10,9 +10,12 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "next": "latest",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.0",
@@ -20,8 +23,7 @@
     "babel-jest": "^25.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
-    "node-sass": "^4.14.1",
-    "react-test-renderer": "^16.12.0",
+    "sass": "^1.26.9",
     "typescript": "^3.9.5"
   }
 }

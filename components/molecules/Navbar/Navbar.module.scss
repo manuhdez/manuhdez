@@ -1,0 +1,43 @@
+@import '../../../styles/index';
+
+.header {
+  background: $pearl-white;
+  padding: 1.5rem var(--padding-x-body);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav_links {
+    display: flex;
+
+    li {
+      margin-left: 1.5rem;
+      margin-bottom: 0;
+      list-style: none;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    li a {
+      @include text_style('body-lg', 'medium');
+      @include link_hover(0, $success);
+      text-decoration: none;
+      color: $rich-black;
+    }
+  }
+
+  &.dark {
+    background: $pure-black;
+
+    li a {
+      color: $pearl-white;
+    }
+  }
+}
