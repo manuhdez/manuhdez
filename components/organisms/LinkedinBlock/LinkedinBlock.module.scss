@@ -1,25 +1,73 @@
 @import '../../../styles/index';
 
+// a bit wider than $mq-tablet
+$mq-tablet-xl: 820px;
+
 .section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 6rem var(--padding-x-body);
   background: $accent;
 
-  h2,
-  a {
-    width: 100%;
-    color: $rich-black;
+  & *::selection {
+    background: $rich-black;
+    color: $pearl-white;
+  }
 
-    @media (min-width: $mq-tablet) {
-      width: 50%;
+  @media (max-width: $mq-tablet-xl) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texts {
+    h2 {
+      max-width: 100%;
+      color: $rich-black;
+
+      @media (min-width: $mq-tablet-xl) {
+        max-width: 50%;
+      }
+    }
+
+    .email_link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: $rich-black;
+      @include link_underline(0, $rich-black);
+
+      &:hover {
+        color: $pearl-white;
+      }
     }
   }
 
-  a {
-    display: block;
-    text-decoration: none;
+  .social_links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
 
-    p {
-      @include text_style('body-lg', 'bold');
+    @media (max-width: $mq-tablet-xl) {
+      width: 80%;
+      margin-left: 0;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: $mq-phone) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 2rem;
+      color: $rich-black;
+      text-decoration: none;
+      @include link_hover(0, $rich-black);
     }
   }
 }

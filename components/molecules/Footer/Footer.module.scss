@@ -1,20 +1,26 @@
 @import '../../../styles/index';
 
 .footer {
-  padding: 4rem var(--padding-x-body);
-  padding-bottom: 2rem;
+  padding: 2rem var(--padding-x-body);
   background: $pearl-white;
 
   & > div {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
   }
 
   @media (max-width: $mq-phone) {
     & > div {
       flex-direction: column;
     }
+  }
+
+  address {
+    display: flex;
+    align-items: center;
+    font-style: initial;
+    @include text_style('body', 'light');
   }
 }
 
@@ -24,28 +30,5 @@
 
   @media (max-width: $mq-phone) {
     width: 100%;
-  }
-}
-
-.social_links {
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
-
-  @media (max-width: $mq-tablet) {
-    width: 50%;
-  }
-
-  @media (max-width: $mq-phone) {
-    width: 100%;
-    margin-bottom: 4rem;
-  }
-
-  a {
-    display: block;
-    margin-bottom: 2rem;
-    color: $rich-black;
-    text-decoration: none;
-    @include link_hover(0, $success);
   }
 }
