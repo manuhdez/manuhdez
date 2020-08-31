@@ -16,7 +16,7 @@ export default function ProjectListItem(props: ProjectData) {
       <Link href={`/projects/${id}`}>
         <a>
           <img loading="lazy" src={imageSrc} alt={title} />
-          <span style={{ opacity: 0 }}>{title}</span>
+          <span style={{ display: 'none' }}>{title}</span>
         </a>
       </Link>
     </article>

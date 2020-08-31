@@ -33,7 +33,7 @@ export default function ProjectsList(props: ProjectsListProps) {
       <div className={styles.grid}>
         {filteredProjects.map((project) => {
           if (recents) {
-            project.size = 'normal';
+            project.size = 'tall';
           }
           return <ProjectListItem key={project.id} {...project} />;
         })}

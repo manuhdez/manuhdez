@@ -18,7 +18,6 @@ export default function ProjectsPage(props: ProjectsPageProps) {
     <>
       <Head>
         <title key="title">Manu Hdez - Projects</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>

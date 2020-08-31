@@ -13,8 +13,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <html lang="en" />
+        <link rel="icon" href="/favicon.ico" />
         <title key="title">Manu Hdez - Fullstack developer</title>
-        <meta name="description" content="Manu Hdez - Fullstack developer" />
+        <meta
+          name="description"
+          content="I’m  passionate about software development and product design.
+          I’m a fast-pace learner that loves facing new challenges.
+          I’ve been working for two years as a full-stack developer mainly focused on creating UI solutions.
+          Always looking for new challenges and opportunities to keep growing in the tech industry as a software developer."
+        />
       </Head>
       <Navbar />
       <Component {...pageProps} />
