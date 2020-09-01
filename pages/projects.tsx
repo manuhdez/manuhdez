@@ -12,7 +12,7 @@ export default function ProjectsPage(props: ProjectsPageProps) {
 
   const title = 'Projects';
   const subtitle =
-    'This is a selection of some personal projects I have develop while learning new things.';
+    'This is a selection of projects I have develop or contributed to in the last years';
 
   return (
     <>

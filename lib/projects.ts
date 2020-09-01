@@ -12,6 +12,10 @@ export interface ProjectData {
   size: string;
   highlight: boolean;
   content?: string;
+  category: string;
+  url: string;
+  code_url: string;
+  short_description: string;
 }
 
 const projectsDir = path.join(process.cwd(), 'content/projects');
@@ -32,7 +36,17 @@ export function getProjectsData() {
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
-    const { title, image, size, highlight, tags } = matterResult.data;
+    const {
+      title,
+      image,
+      size,
+      highlight,
+      tags,
+      category,
+      url,
+      code_url,
+      short_description,
+    } = matterResult.data;
 
     return {
       id,
@@ -41,6 +55,10 @@ export function getProjectsData() {
       size,
       highlight,
       tags,
+      category,
+      url,
+      code_url,
+      short_description,
     };
   });
 
@@ -69,7 +87,17 @@ export async function getProjectData(id: string): Promise<ProjectData> {
   const matterResult = matter(fileContents);
 
   // Combine the data with the id
-  const { title, image, size, highlight, tags } = matterResult.data;
+  const {
+    title,
+    image,
+    size,
+    highlight,
+    tags,
+    category,
+    url,
+    code_url,
+    short_description,
+  } = matterResult.data;
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
@@ -86,5 +114,9 @@ export async function getProjectData(id: string): Promise<ProjectData> {
     highlight,
     tags,
     content,
+    category,
+    url,
+    code_url,
+    short_description,
   };
 }

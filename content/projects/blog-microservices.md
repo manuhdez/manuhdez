@@ -3,6 +3,10 @@ title: Blog microservice architechture
 image: blog-microservices.gif
 size: wide
 highlight: true
+category: fullstack
+url: https://cv-mobile-q07elupse.now.sh/
+code_url: https://github.com/20H-Talent/CV-Mobile
+short_description: Student and company profiles management app  to enable connections creating new job opportunities.
 tags:
   - javascript
   - react

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 .section {
-  padding: var(--padding-y-section) 2rem;
+  padding: 0 2rem var(--padding-y-section) 2rem;
   margin: 0 auto;
   max-width: 900px;
 
@@ -25,10 +25,7 @@
     height: auto;
     max-height: 550px;
     object-fit: contain;
-    margin: 1.5rem 0;
-    padding: 0.5rem;
-    box-shadow: $card-shadow-light;
-    border-radius: 0.25rem;
+    margin: 1.5rem 0 2.5rem 0;
   }
 
   pre {

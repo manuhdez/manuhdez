@@ -3,6 +3,10 @@ title: CV Mobile Web - Bootcamp project
 image: cv-mobile-web.gif
 size: normal
 highlight: true
+category: frontend
+url: https://cv-mobile-q07elupse.now.sh/
+code_url: https://github.com/20H-Talent/CV-Mobile
+short_description: Student and company profiles management app  to enable connections creating new job opportunities.
 tags:
   - html
   - css
