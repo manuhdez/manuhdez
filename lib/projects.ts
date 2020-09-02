@@ -12,7 +12,7 @@ export interface ProjectData {
   highlight: boolean;
   content?: string;
   category: string;
-  url: string;
+  url?: string;
   code_url: string;
   short_description: string;
 }
@@ -41,22 +41,26 @@ export function getProjectsData() {
       highlight,
       tags,
       category,
-      url,
       code_url,
       short_description,
     } = matterResult.data;
 
-    return {
+    const projectData: ProjectData = {
       id,
       title,
       size,
       highlight,
       tags,
       category,
-      url,
       code_url,
       short_description,
     };
+
+    if (matterResult.data.url) {
+      projectData.url = matterResult.data.url;
+    }
+
+    return projectData;
   });
 
   return allProjectsData;
@@ -90,7 +94,6 @@ export async function getProjectData(id: string): Promise<ProjectData> {
     highlight,
     tags,
     category,
-    url,
     code_url,
     short_description,
   } = matterResult.data;
@@ -102,16 +105,21 @@ export async function getProjectData(id: string): Promise<ProjectData> {
 
   const content = processedContent.toString();
 
-  return {
+  const projectData: ProjectData = {
     id,
     title,
     size,
     highlight,
     tags,
-    content,
     category,
-    url,
     code_url,
     short_description,
+    content,
   };
+
+  if (matterResult.data.url) {
+    projectData.url = matterResult.data.url;
+  }
+
+  return projectData;
 }

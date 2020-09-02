@@ -3,7 +3,6 @@ title: Blog microservices
 size: wide
 highlight: true
 category: fullstack
-url: https://cv-mobile-q07elupse.now.sh/
 code_url: https://github.com/manuhdez/microservices-blog
 short_description: Project for a microservices course handling all services manually with docker and kubernetes.
 tags:
