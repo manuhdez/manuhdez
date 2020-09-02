@@ -15,6 +15,7 @@ export default function ProjectPage(props: ProjectData) {
     <>
       <Head>
         <link rel="stylesheet" href="/assets/styles/prism.css" />
+        <link rel="stylesheet" href="/assets/styles/prism-vscode.css" />
         <meta key="og:title" property="og:title" content={title} />
         <meta
           key="og:url"
