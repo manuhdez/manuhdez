@@ -2,12 +2,66 @@
 
 .header {
   text-align: center;
-  background: $pearl-white;
-  background: $accent;
-  padding: var(--padding-y-section) 0;
+  background: $success;
+  padding: 8rem 2rem;
 
-  * {
+  .category {
+    @include text_style('body', 'book');
+    text-transform: capitalize;
+  }
+
+  h1 {
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .short_description {
+    @include text_style('body-lg', 'medium');
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    display: inline-block;
+
+    a {
+      margin: 0 0.25rem;
+    }
+  }
+
+  @media (max-width: $mq-phone) {
+    padding: 4rem 1.5rem;
+
+    .category {
+      @include text_style('body', 'book');
+    }
+    h1 {
+      @include text_style('h2', 'extra-bold');
+      margin-bottom: 2rem;
+    }
+
+    .short_description {
+      @include text_style('body-lg', 'book');
+    }
+  }
+}
+
+.tags_container {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 900px;
+
+  .tags_list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      text-transform: none;
+      margin-right: 0.5rem;
+    }
   }
 }

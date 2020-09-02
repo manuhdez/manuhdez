@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Hero from '../components/molecules/Hero/Hero';
 import ProjectsList from '../components/organisms/ProjectsList/ProjecstList';
 import ToolsSection from '../components/organisms/ToolsSection/ToolsSection';
@@ -11,19 +10,12 @@ interface HomePageProps {
 
 export default function HomePage({ projects }: HomePageProps) {
   return (
-    <>
-      <Head>
-        <title>Manu Hdez</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Hero />
-        <ProjectsList recents projects={projects} />
-        <ToolsSection />
-        <LinkedinBlock />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <ProjectsList recents projects={projects} />
+      <ToolsSection />
+      <LinkedinBlock />
+    </main>
   );
 }
 

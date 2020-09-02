@@ -12,13 +12,12 @@ export default function ProjectsPage(props: ProjectsPageProps) {
 
   const title = 'Projects';
   const subtitle =
-    'This is a selection of some personal projects I have develop while learning new things.';
+    'This is a selection of projects I have develop or contributed to in the last years';
 
   return (
     <>
       <Head>
-        <title>Manu Hdez - Projects</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title key="title">Manu Hdez - Projects</title>
       </Head>
 
       <main>

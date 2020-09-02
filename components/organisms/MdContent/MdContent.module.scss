@@ -1,27 +1,44 @@
 @import '../../../styles/index';
 
-.section {
-  padding: var(--padding-y-section) var(--padding-x-body);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-  * {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 900px;
-  }
+.section {
+  padding: 0 2rem var(--padding-y-section) 2rem;
+  margin: 0 auto;
+  max-width: 900px;
 
   h2:not(:first-child) {
     margin-top: 2.5rem;
   }
 
-  p {
+  p,
+  li {
     @include text_style('h3', 'book');
+
+    @media (max-width: $mq-phone) {
+      @include text_style('body-lg', 'book');
+    }
+  }
+
+  ul {
+    padding-left: 1.2rem;
   }
 
   img {
+    display: block;
     width: 100%;
     height: auto;
-    max-height: 700px;
-    padding: 1.5rem 0;
+    max-height: 550px;
     object-fit: contain;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+
+  pre {
+    border-radius: 5px !important;
+    box-shadow: $card-shadow-dark;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
   }
 }

@@ -14,11 +14,11 @@ const navLinksData = [
     title: 'Contact',
     disabled: false,
   },
-  {
-    route: '/blog',
-    title: 'Blog (Coming soon)',
-    disabled: true,
-  },
+  // {
+  //   route: '/blog',
+  //   title: 'Blog (Coming soon)',
+  //   disabled: true,
+  // },
 ];
 
 export default function Navbar() {
