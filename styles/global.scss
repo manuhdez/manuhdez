@@ -125,6 +125,11 @@ a.btn {
   }
 }
 
+.btn-primary {
+  @extend .btn-dark;
+  background: $primary;
+}
+
 .btn-dark-stroke {
   background: none;
   color: $rich-black;

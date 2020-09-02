@@ -3,13 +3,7 @@
 .header {
   text-align: center;
   background: $success;
-  // background: $section-light-bg;
   padding: 8rem 2rem;
-
-  & *::selection {
-    background: $pearl-white;
-    color: $rich-black;
-  }
 
   .category {
     @include text_style('body', 'book');

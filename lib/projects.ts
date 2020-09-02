@@ -7,7 +7,6 @@ import html from 'remark-html';
 export interface ProjectData {
   id: string;
   title: string;
-  image: string;
   tags: string[];
   size: string;
   highlight: boolean;
@@ -38,7 +37,6 @@ export function getProjectsData() {
     // Combine the data with the id
     const {
       title,
-      image,
       size,
       highlight,
       tags,
@@ -51,7 +49,6 @@ export function getProjectsData() {
     return {
       id,
       title,
-      image,
       size,
       highlight,
       tags,
@@ -89,7 +86,6 @@ export async function getProjectData(id: string): Promise<ProjectData> {
   // Combine the data with the id
   const {
     title,
-    image,
     size,
     highlight,
     tags,
@@ -109,7 +105,6 @@ export async function getProjectData(id: string): Promise<ProjectData> {
   return {
     id,
     title,
-    image,
     size,
     highlight,
     tags,

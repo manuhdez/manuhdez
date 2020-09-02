@@ -11,12 +11,17 @@
     margin-top: 2.5rem;
   }
 
-  p {
+  p,
+  li {
     @include text_style('h3', 'book');
 
     @media (max-width: $mq-phone) {
       @include text_style('body-lg', 'book');
     }
+  }
+
+  ul {
+    padding-left: 1.2rem;
   }
 
   img {

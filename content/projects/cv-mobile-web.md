@@ -1,6 +1,5 @@
 ---
 title: CV Mobile Web - Bootcamp project
-image: cv-mobile-web.gif
 size: normal
 highlight: true
 category: frontend

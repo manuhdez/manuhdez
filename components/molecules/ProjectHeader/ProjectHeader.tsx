@@ -1,6 +1,5 @@
 import styles from './ProjectHeader.module.scss';
 import { ProjectData } from '../../../lib/projects';
-import Link from 'next/link';
 
 export default function ProjectHeader(props: ProjectData) {
   const { title, tags, category, url, code_url, short_description } = props;
