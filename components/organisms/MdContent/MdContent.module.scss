@@ -18,6 +18,14 @@
     @media (max-width: $mq-phone) {
       @include text_style('body-lg', 'book');
     }
+
+    a {
+      color: $success;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+      @include link_hover(-2px, $success);
+    }
   }
 
   ul {
