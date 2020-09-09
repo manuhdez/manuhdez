@@ -1,5 +1,3 @@
-@import './colors';
-
 /* PrismJS 1.21.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+css-extras+docker+graphql+json+markup-templating+php+python+jsx+tsx+sql+swift+typescript+yaml&plugins=autoloader+toolbar+copy-to-clipboard */
 /**
@@ -12,8 +10,6 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: #ccc;
   background: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
