@@ -33,10 +33,10 @@
     }
   }
 
-  &.dark {
-    background: $pure-black;
+  @media (prefers-color-scheme: dark) {
+    background: $rich-black;
 
-    li a {
+    .nav_links li a {
       color: $pearl-white;
     }
   }

@@ -17,7 +17,7 @@ body {
     color: $rich-black;
   }
 
-  &.dark {
+  @media (prefers-color-scheme: dark) {
     color: $pearl-white;
     background-color: $rich-black;
   }

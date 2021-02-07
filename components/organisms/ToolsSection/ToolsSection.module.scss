@@ -4,6 +4,10 @@
   display: flex;
   background: $section-light-bg;
 
+  @media (prefers-color-scheme: dark) {
+    background: $rich-black;
+  }
+
   img {
     width: 30%;
     max-height: 600px;

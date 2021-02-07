@@ -43,4 +43,8 @@
       transform: translateY(0);
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: $pearl-white;
+  }
 }

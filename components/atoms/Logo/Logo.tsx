@@ -1,11 +1,8 @@
 import Link from 'next/link';
+import useSystemTheme from 'hooks/useSystemTheme';
 
-interface LogoProps {
-  theme?: 'dark' | 'light';
-}
-
-export default function Logo(props: LogoProps) {
-  const { theme = 'light' } = props;
+export default function Logo() {
+  const theme = useSystemTheme();
 
   const small = `/assets/images/logo/${theme}/24w.svg`;
   const medium = `/assets/images/logo/${theme}/77w.svg`;
