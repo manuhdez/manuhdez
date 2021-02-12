@@ -113,6 +113,7 @@ export async function getProjectData(id: string): Promise<ProjectData> {
     title,
     size,
     highlight,
+    order,
     tags,
     category,
     code_url,
