@@ -46,13 +46,13 @@ body {
 * Defining text elements base styling
 **/
 h1 {
-  @include text_style('h1', 'extra-bold');
+  @include text_style('h1', 'bold');
   line-height: 112%;
   margin-bottom: 1.5rem;
 }
 
 h2 {
-  @include text_style('h2', 'extra-bold');
+  @include text_style('h2', 'medium');
   line-height: 112%;
   margin-bottom: 1rem;
 }
