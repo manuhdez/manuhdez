@@ -1,7 +1,7 @@
 @import '../../../styles/index';
 
 @mixin item_radius() {
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 @mixin item_tall() {
@@ -20,19 +20,16 @@
   align-items: flex-end;
   overflow: hidden;
   box-shadow: $card-shadow-dark;
+  transition: transform 1s ease-in-out;
 
-  &:hover {
-    img {
-      transform: scale(1.2);
+  @media (min-width: $mq-tablet) {
+    &:hover {
+      transform: scale(1.025);
+
+      img {
+        transform: scale(1.05);
+      }
     }
-  }
-
-  &.tall {
-    @include item_tall();
-  }
-
-  &.wide {
-    @include item_wide();
   }
 
   .item_data {
@@ -41,7 +38,7 @@
     width: 100%;
     padding: 3rem 2rem 1.5rem 2rem;
     color: $pearl-white;
-    background: linear-gradient(transparent, $rich-black);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 
     h3 {
       margin-bottom: 0.5rem;
@@ -58,6 +55,17 @@
     z-index: 0;
     object-fit: cover;
     transition: transform 1.5s ease-in-out;
+  }
+
+  &.tall {
+    @include item_tall();
+  }
+
+  &.wide {
+    @include item_wide();
+    img {
+      object-fit: cover;
+    }
   }
 
   @media (max-width: $mq-tablet) {

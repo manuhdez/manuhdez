@@ -22,9 +22,17 @@ export default function ProjectsList(props: ProjectsListProps) {
     <SectionTitle title={title} subtitle={subtitle} link={link} />
   );
 
+  const sortByProjectOrder = (a: ProjectData, b: ProjectData) => {
+    return a.order - b.order;
+  };
+
+  const filterHighlightedProjects = (project: ProjectData) => {
+    return project.highlight === true;
+  };
+
   const filteredProjects =
     recents && projects
-      ? projects.filter((project) => project.highlight)
+      ? projects.sort(sortByProjectOrder).filter(filterHighlightedProjects)
       : projects;
 
   return (

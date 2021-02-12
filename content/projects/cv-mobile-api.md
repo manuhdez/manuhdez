@@ -2,6 +2,7 @@
 title: CV Mobile API - Bootcamp project
 size: normal
 highlight: true
+order: 2
 category: backend
 url: https://cv-mobile-api.herokuapp.com/
 code_url: https://github.com/manuhdez/cv-mobile-api
