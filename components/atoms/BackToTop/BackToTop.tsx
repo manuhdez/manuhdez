@@ -1,14 +1,18 @@
-import styles from './BackToTop.module.scss';
+import {
+  BackToTopButton,
+  BackToTopButtonText,
+  BackToTopButtonIcon,
+} from './BackToTop.styles';
 
 export default function BackToTop() {
   const handleClick = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0 });
   };
 
   return (
-    <button onClick={handleClick} className={styles.back_top}>
-      <span className={styles.text}>Back to top</span>
-      <span className={styles.arrow}>⬆️</span>
-    </button>
+    <BackToTopButton onClick={handleClick}>
+      <BackToTopButtonText>Back to top</BackToTopButtonText>
+      <BackToTopButtonIcon>⬆️</BackToTopButtonIcon>
+    </BackToTopButton>
   );
 }
