@@ -10,6 +10,7 @@ export interface ProjectData {
   tags: string[];
   size: string;
   highlight: boolean;
+  order: number;
   content?: string;
   category: string;
   url?: string;
@@ -39,6 +40,7 @@ export function getProjectsData() {
       title,
       size,
       highlight,
+      order,
       tags,
       category,
       code_url,
@@ -50,6 +52,7 @@ export function getProjectsData() {
       title,
       size,
       highlight,
+      order,
       tags,
       category,
       code_url,
@@ -92,6 +95,7 @@ export async function getProjectData(id: string): Promise<ProjectData> {
     title,
     size,
     highlight,
+    order,
     tags,
     category,
     code_url,
@@ -110,6 +114,7 @@ export async function getProjectData(id: string): Promise<ProjectData> {
     title,
     size,
     highlight,
+    order,
     tags,
     category,
     code_url,

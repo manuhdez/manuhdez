@@ -1,12 +1,13 @@
 @import '../../../styles/index';
 
 .hero {
-  padding: var(--padding-y-section) var(--padding-x-body);
-  background-color: $section-light-bg;
-  background-image: url('/assets/images/hero/cover.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: calc(100vh - 5rem);
+
+  padding: 0 var(--padding-x-body);
 
   h1,
   p {
@@ -15,8 +16,7 @@
     margin-bottom: 0.5rem;
 
     @media (min-width: $mq-tablet) {
-      width: 50%;
-      max-width: 550px;
+      max-width: 830px;
       margin: initial;
       margin-bottom: 1rem;
     }

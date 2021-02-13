@@ -1,7 +1,8 @@
 ---
 title: CV Mobile Web - Bootcamp project
-size: normal
+size: tall
 highlight: true
+order: 1
 category: frontend
 url: https://cv-mobile-q07elupse.now.sh/
 code_url: https://github.com/20H-Talent/CV-Mobile

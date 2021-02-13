@@ -4,6 +4,10 @@
   padding: 2rem var(--padding-x-body);
   background: $pearl-white;
 
+  @media (prefers-color-scheme: dark) {
+    background: $rich-black;
+  }
+
   & > div {
     display: flex;
     justify-content: space-between;
