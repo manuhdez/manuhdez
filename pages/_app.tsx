@@ -1,16 +1,14 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-
-// components
-import Navbar from '../components/molecules/Navbar/Navbar';
-import Footer from '../components/molecules/Footer/Footer';
-// styles
-import '../styles/global.scss';
+import Navbar from 'components/molecules/Navbar/Navbar';
+import Footer from 'components/molecules/Footer/Footer';
+import GlobalStyle from 'styles/GlobalStyle';
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <GlobalStyle />
       <Head>
         <html lang="en" />
         <link rel="icon" href="/favicon.ico" />
