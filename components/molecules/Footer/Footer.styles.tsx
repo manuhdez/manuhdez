@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { Body } from 'styles/Typography';
 
+const StyledBody = styled(Body)`
+  display: flex;
+  align-items: center;
+
+  font-weight: 300;
+  font-style: initial;
+
+  @media (max-width: var(--mq-phone)) {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+`;
+
 export const Address = ({ children }) => {
-  const StyledBody = styled(Body)`
-    display: flex;
-    align-items: center;
-
-    font-weight: 300;
-    font-style: initial;
-
-    @media (max-width: var(--mq-phone)) {
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-  `;
-
   return <StyledBody as="address">{children}</StyledBody>;
 };
 

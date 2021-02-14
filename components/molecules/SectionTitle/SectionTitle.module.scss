@@ -1,4 +1,4 @@
-@import '../../../styles/index';
+// @import '../../../styles/index';
 
 .container {
   margin-bottom: 4rem;
@@ -9,24 +9,24 @@
 
   a,
   p {
-    @include text_style('body-lg', 'regular');
+    // @include text_style('body-lg', 'regular');
     width: auto;
     margin: 0;
     display: inline-block;
 
     text-decoration: none;
-    color: $rich-black;
+    color: var(--rich-black);
 
     &:hover {
-      color: $success;
+      color: var(--success);
     }
 
     @media (prefers-color-scheme: dark) {
-      color: $pearl-white;
+      color: var(--pearl-white);
     }
   }
 
-  a {
-    @include link_hover(-0, $success);
-  }
+  // a {
+  //   @include link_hover(-0, $success);
+  // }
 }

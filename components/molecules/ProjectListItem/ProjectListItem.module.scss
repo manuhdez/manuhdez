@@ -1,4 +1,4 @@
-@import '../../../styles/index';
+// @import '../../../styles/index';
 
 @mixin item_radius() {
   border-radius: 3px;
@@ -14,15 +14,14 @@
 .item {
   height: 100%;
   position: relative;
-  @include item_radius();
-  height: get_item_height(1);
+  border-radius: 3px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  box-shadow: $card-shadow-dark;
+  box-shadow: var(--card-shadow-dark);
   transition: transform 1s ease-in-out;
 
-  @media (min-width: $mq-tablet) {
+  @media (min-width: var(--tablet)) {
     &:hover {
       transform: scale(1.025);
 
@@ -37,7 +36,7 @@
     z-index: 1;
     width: 100%;
     padding: 3rem 2rem 1.5rem 2rem;
-    color: $pearl-white;
+    color: var(--pearl-white);
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 
     h3 {
@@ -46,7 +45,6 @@
   }
 
   img {
-    @include item_radius();
     position: absolute;
     top: 0;
     left: 0;
@@ -58,17 +56,17 @@
   }
 
   &.tall {
-    @include item_tall();
+    grid-row-end: span 2;
   }
 
   &.wide {
-    @include item_wide();
+    grid-column-end: span 2;
     img {
       object-fit: cover;
     }
   }
 
-  @media (max-width: $mq-tablet) {
+  @media (max-width: var(--tablet)) {
     grid-column-end: span 2;
 
     &.tall {

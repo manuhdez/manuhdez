@@ -1,7 +1,7 @@
-@import '../../../styles/index';
+// @import '../../../styles/index';
 
 .header {
-  background: $pearl-white;
+  background: var(--pearl-white);
   padding: 1.5rem var(--padding-x-body);
   display: flex;
   justify-content: space-between;
@@ -26,18 +26,18 @@
     }
 
     li a {
-      @include text_style('body-lg', 'medium');
-      @include link_hover(0, $success);
+      // @include text_style('body-lg', 'medium');
+      // @include link_hover(0, $success);
       text-decoration: none;
-      color: $rich-black;
+      color: var(--rich-black);
     }
   }
 
   @media (prefers-color-scheme: dark) {
-    background: $rich-black;
+    background: var(--rich-black);
 
     .nav_links li a {
-      color: $pearl-white;
+      color: var(--pearl-white);
     }
   }
 }

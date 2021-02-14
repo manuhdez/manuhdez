@@ -1,41 +1,43 @@
-@import '../../../styles/index';
-
-// a bit wider than $mq-tablet
-$mq-tablet-xl: 820px;
+// @import '../../../styles/index';
 
 .section {
+  // a bit wider than $mq-tablet
+  --mq-tablet-xl: 820px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 6rem var(--padding-x-body);
-  background: $accent;
+  background: var(--accent);
 
-  @media (max-width: $mq-tablet-xl) {
+  @media (max-width: var(--mq-tablet-xl)) {
     justify-content: center;
     flex-direction: column;
     align-items: center;
   }
+
   @media (prefers-color-scheme: light) {
     & *::selection {
-      background: $rich-black;
-      color: $pearl-white;
+      background: var(--rich-black);
+      color: var(--pearl-white);
     }
   }
+
   @media (prefers-color-scheme: dark) {
-    background: $rich-black;
+    background: var(--rich-black);
   }
 
   .texts {
     h2 {
       max-width: 100%;
-      color: $rich-black;
+      color: var(--rich-black);
 
-      @media (min-width: $mq-tablet-xl) {
+      @media (min-width: var(--mq-tablet-xl)) {
         max-width: 50%;
       }
       @media (prefers-color-scheme: dark) {
-        color: $pearl-white;
+        color: var(--pearl-white);
       }
     }
 
@@ -43,19 +45,19 @@ $mq-tablet-xl: 820px;
       position: relative;
       display: inline-block;
       text-decoration: none;
-      color: $rich-black;
-      @include link_underline(0, $rich-black);
+      color: var(--rich-black);
+      // @include link_underline(0, $rich-black);
 
       &:hover {
-        color: $pearl-white;
+        color: var(--pearl-white);
       }
 
       @media (prefers-color-scheme: dark) {
-        color: $pearl-white;
-        @include link_underline(0, $pearl-white);
+        color: var(--pearl-white);
+        // @include link_underline(0, $pearl-white);
 
         &:hover {
-          color: $accent;
+          color: var(--accent);
         }
       }
     }
@@ -67,13 +69,13 @@ $mq-tablet-xl: 820px;
     justify-content: space-between;
     margin-left: 2rem;
 
-    @media (max-width: $mq-tablet-xl) {
+    @media (max-width: var(--mq-tablet-xl)) {
       width: 80%;
       margin-left: 0;
       margin-top: 4rem;
     }
 
-    @media (max-width: $mq-phone) {
+    @media (max-width: var(--mq-phone)) {
       width: 100%;
       margin-left: 0;
     }
@@ -81,13 +83,13 @@ $mq-tablet-xl: 820px;
     a {
       display: block;
       margin-bottom: 2rem;
-      color: $rich-black;
+      color: var(--rich-black);
       text-decoration: none;
-      @include link_hover(0, $rich-black);
+      // @include link_hover(0, $rich-black);
 
       @media (prefers-color-scheme: dark) {
-        color: $pearl-white;
-        @include link_hover(0, $pearl-white);
+        color: var(--pearl-white);
+        // @include link_hover(0, $pearl-white);
       }
     }
   }

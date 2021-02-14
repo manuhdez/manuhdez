@@ -1,4 +1,4 @@
-@import '../../../styles/index';
+// @import '../../../styles/index';
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
@@ -13,18 +13,19 @@
 
   p,
   li {
-    @include text_style('h3', 'book');
+    // @include text_style('h3', 'book');
 
-    @media (max-width: $mq-phone) {
-      @include text_style('body-lg', 'book');
+    @media (max-width: var(--phone)) {
+      // @include text_style('body-lg', 'book');
+      font-weight: 400;
     }
 
     a {
-      color: $success;
+      color: var(--success);
       display: inline-block;
       text-decoration: none;
       font-weight: 500;
-      @include link_hover(-2px, $success);
+      // @include link_hover(-2px, $success);
     }
   }
 
@@ -43,7 +44,7 @@
 
   pre {
     border-radius: 5px !important;
-    box-shadow: $card-shadow-dark;
+    box-shadow: var(--card-shadow-dark);
   }
 
   code {

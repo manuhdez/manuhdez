@@ -32,14 +32,6 @@ export default css`
       format('woff2');
     font-display: swap;
   }
-
-  @font-face {
-    font-family: AirbnbCereal;
-    font-weight: 700;
-    src: url('../public/assets/fonts/airbnbcereal/extrabold-webfont.woff2')
-      format('woff2');
-    font-display: swap;
-  }
 `;
 
 export const H1 = styled.h1`

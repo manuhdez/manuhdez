@@ -1,12 +1,12 @@
-@import '../../../styles/index';
+// @import '../../../styles/index';
 
 .header {
   text-align: center;
-  background: $success;
+  background: var(--success);
   padding: 8rem 2rem;
 
   .category {
-    @include text_style('body', 'book');
+    // @include text_style('body', 'book');
     text-transform: capitalize;
   }
 
@@ -18,7 +18,7 @@
   }
 
   .short_description {
-    @include text_style('body-lg', 'medium');
+    // @include text_style('body-lg', 'medium');
     margin-bottom: 4rem;
     max-width: 700px;
     margin-left: auto;
@@ -33,20 +33,20 @@
     }
   }
 
-  @media (max-width: $mq-phone) {
+  @media (max-width: var(--mq-phone)) {
     padding: 4rem 1.5rem;
 
-    .category {
-      @include text_style('body', 'book');
-    }
+    // .category {
+    // @include text_style('body', 'book');
+    // }
     h1 {
-      @include text_style('h2', 'extra-bold');
+      // @include text_style('h2', 'extra-bold');
       margin-bottom: 2rem;
     }
 
-    .short_description {
-      @include text_style('body-lg', 'book');
-    }
+    // .short_description {
+    //   @include text_style('body-lg', 'book');
+    // }
   }
 }
 
