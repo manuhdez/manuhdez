@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import Typography from './Typography';
+import { device, theme } from './MediaQueries';
 
 export default createGlobalStyle`
   ${Typography}
@@ -57,20 +58,16 @@ export default createGlobalStyle`
       color: var(--rich-black);
     }
 
-    /* tablet */
-    @media (min-width: 768px) {
-      /* Spacing */
+    @media ${device.tablet} {
       --padding-x-body: 5.625rem;
     }
 
-    /* desktop */
-    @media (min-width: 1152px) {
-      /* Spacing */
+    @media ${device.laptopL} {
       --padding-x-body: 11.25rem;
       --padding-y-section: 10rem;
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media ${theme.dark} {
       color: var(--pearl-white);
       background: var(--rich-black);
     }
