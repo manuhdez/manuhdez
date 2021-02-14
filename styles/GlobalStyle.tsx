@@ -31,7 +31,7 @@ export default createGlobalStyle`
 
     @media (prefers-color-scheme: dark) {
       color: var(--pearl-white);
-      background-color: var(--rich-black);
+      background: var(--rich-black);
     }
   }
 `;
