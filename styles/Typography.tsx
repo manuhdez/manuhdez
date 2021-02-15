@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { AnyStyledComponent, css } from 'styled-components';
 
 export default css`
   @font-face {
@@ -64,9 +64,17 @@ export const BodySmall = styled.p`
   font-weight: 300;
 `;
 
-export const LinkHover = ({ children }) => styled(children)`
+interface UnderlineModifiers {
+  color?: string;
+  space?: number;
+}
+
+export const withHover = ({
+  color = 'pearl-white',
+  space = 0.3,
+}: UnderlineModifiers) => css`
   &:hover {
-    color: $color;
+    color: var(--${color});
   }
 
   &::after {
@@ -74,8 +82,8 @@ export const LinkHover = ({ children }) => styled(children)`
     display: block;
     width: 0;
     height: 2px;
-    background: $color;
-    margin-top: $space;
+    background: var(--${color});
+    margin-top: ${space}rem;
     transition: width 300ms ease-out;
   }
 
@@ -84,14 +92,14 @@ export const LinkHover = ({ children }) => styled(children)`
   }
 `;
 
-export const LinkUnderlined = ({ children }) => styled(children)`
+export const withUnderline = ({ color, space }: UnderlineModifiers) => css`
   &::after {
     content: '';
     display: block;
     width: 100%;
     height: 2px;
-    background: $color;
-    margin-top: $space;
+    background: var(--${color});
+    margin-top: var(--${space});
     transition: width 300ms ease-out;
   }
 `;
