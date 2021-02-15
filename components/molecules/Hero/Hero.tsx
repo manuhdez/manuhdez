@@ -1,4 +1,3 @@
-// import styles from './Hero.module.scss';
 import { HeroSection, Subtitle, Title } from './Hero.styles';
 
 export default function Hero() {

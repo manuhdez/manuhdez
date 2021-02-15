@@ -1,4 +1,5 @@
 import styled, { StyledComponent } from 'styled-components';
+import { device } from 'styles/MediaQueries';
 import { Body, H1 } from 'styles/Typography';
 
 const TextStyle = (component: StyledComponent<any, any>) => styled(component)`
@@ -7,12 +8,9 @@ const TextStyle = (component: StyledComponent<any, any>) => styled(component)`
   margin: 0 auto;
   margin-bottom: 0.5rem;
 
-  @media (min-width: var(--tablet)) {
-    & {
-      margin: initial;
-      margin-bottom: 1rem;
-      color: red;
-    }
+  @media ${device.tablet} {
+    margin: initial;
+    margin-bottom: 1rem;
   }
 `;
 
