@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device, theme } from 'styles/MediaQueries';
 import { Body } from 'styles/Typography';
 
 const StyledBody = styled(Body)`
@@ -8,7 +9,7 @@ const StyledBody = styled(Body)`
   font-weight: 300;
   font-style: initial;
 
-  @media (max-width: var(--mq-phone)) {
+  @media ${device.mobileL} {
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -23,7 +24,7 @@ export const StyledFooter = styled.footer`
   padding: 2rem var(--padding-x-body);
   background: var(--pearl-white);
 
-  @media (prefers-color-scheme: dark) {
+  @media ${theme.dark} {
     background: var(--rich-black);
   }
 `;
