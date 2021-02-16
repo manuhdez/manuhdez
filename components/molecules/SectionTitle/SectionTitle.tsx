@@ -1,6 +1,6 @@
 import { ReactChild } from 'react';
 import { BodyLarge, H2 } from 'styles/Typography';
-import styles from './SectionTitle.module.scss';
+import { Container } from './SectionTitle.styles';
 
 interface SectionTitleProps {
   title: string;
@@ -11,9 +11,9 @@ export default function SectionTitle(props: SectionTitleProps) {
   const { title, children } = props;
 
   return (
-    <div className={styles.container}>
+    <Container>
       <H2>{title}</H2>
       {children && <BodyLarge>{children}</BodyLarge>}
-    </div>
+    </Container>
   );
 }

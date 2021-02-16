@@ -47,11 +47,13 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   font-size: 1.125rem;
   font-weight: 600;
+  line-height: 120%;
 `;
 
 export const BodyLarge = styled.p`
   font-size: 1rem;
   font-weight: 400;
+  line-height: 140%;
 `;
 
 export const Body = styled.p`

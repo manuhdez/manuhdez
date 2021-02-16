@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { H1, BodyLarge } from 'styles/Typography';
+import { H1 } from 'styles/Typography';
 import { device } from 'styles/MediaQueries';
 
 export const TitleContainer = styled.div`
