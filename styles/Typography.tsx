@@ -94,7 +94,10 @@ export const withHover = ({
   }
 `;
 
-export const withUnderline = ({ color, space }: UnderlineModifiers) => css`
+export const withUnderline = ({
+  color = 'pearl-white',
+  space = 0.3,
+}: UnderlineModifiers) => css`
   &::after {
     content: '';
     display: block;

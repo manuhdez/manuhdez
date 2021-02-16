@@ -1,4 +1,6 @@
-import styles from './ToolsSection.module.scss';
+import ToolsLists from 'components/molecules/ToolsLists/ToolsLists';
+import { H2 } from 'styles/Typography';
+import { Image, Section, ToolsContainer, Header } from './ToolsSection.styles';
 
 const tools = {
   Design: ['Figma', 'Sketch', 'Zeplin', 'Adobe Suite'],
@@ -15,32 +17,15 @@ const tools = {
 };
 
 export default function ToolsSection() {
-  const getColumns = () => {
-    return Object.keys(tools).map((column) => getRows(column));
-  };
-
-  const getRows = (columnKey: string) => {
-    const listItems = tools[columnKey].map((item: string) => (
-      <li key={item}>{item}</li>
-    ));
-
-    return (
-      <ul key={columnKey}>
-        <li className={styles.column_title}>{columnKey}</li>
-        {listItems}
-      </ul>
-    );
-  };
-
   return (
-    <section className={styles.section}>
-      <img src="/assets/images/tools/tools.png" />
-      <div className={styles.tools_container}>
-        <header>
-          <h2>The tools I use to build great digital products</h2>
-        </header>
-        <div className={styles.tools_table}>{getColumns()}</div>
-      </div>
-    </section>
+    <Section>
+      <Image src="/assets/images/tools/tools.png" />
+      <ToolsContainer>
+        <Header>
+          <H2>The tools I use to build great digital products</H2>
+        </Header>
+        <ToolsLists tools={tools} />
+      </ToolsContainer>
+    </Section>
   );
 }
