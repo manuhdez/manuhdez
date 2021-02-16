@@ -46,7 +46,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export const BodyLarge = styled.p`

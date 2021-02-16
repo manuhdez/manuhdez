@@ -39,6 +39,7 @@ export default createGlobalStyle`
     --card-shadow-dark: 0 2px 4px 0 rgba(#131313, 0.6);
     --btn-light-shadow: 0 2px 4px 0 rgba(#575656, 0.2);
     --btn-light-border: 1px solid rgba(#bdbdbd, 0.3);
+    --small-radius: 3px;
   }
 
   html,
