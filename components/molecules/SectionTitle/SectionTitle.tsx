@@ -1,46 +1,19 @@
-import Link from 'next/link';
+import { ReactChild } from 'react';
+import { BodyLarge, H2 } from 'styles/Typography';
 import styles from './SectionTitle.module.scss';
 
 interface SectionTitleProps {
   title: string;
-  subtitle: string;
-  link?: {
-    url: string;
-    external: boolean;
-  };
+  children?: ReactChild;
 }
 
 export default function SectionTitle(props: SectionTitleProps) {
-  const { title, subtitle, link } = props;
-
-  const getSubtitle = () => {
-    if (!link) {
-      return <p>{subtitle}</p>;
-    }
-
-    if (link && !link.external) {
-      return (
-        <Link href={link.url}>
-          <a>
-            <p>{subtitle}</p>
-          </a>
-        </Link>
-      );
-    }
-
-    if (link && link.external) {
-      return (
-        <a href={link.url} target="blank" rel="noreferer noopener">
-          <p>{subtitle}</p>
-        </a>
-      );
-    }
-  };
+  const { title, children } = props;
 
   return (
     <div className={styles.container}>
-      <h2>{title}</h2>
-      {getSubtitle()}
+      <H2>{title}</H2>
+      {children && <BodyLarge>{children}</BodyLarge>}
     </div>
   );
 }

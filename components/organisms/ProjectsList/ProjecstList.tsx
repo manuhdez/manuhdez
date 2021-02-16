@@ -1,7 +1,6 @@
-import ProjectListItem from '../../molecules/ProjectListItem/ProjectListItem';
-import SectionTitle from '../../molecules/SectionTitle/SectionTitle';
-import { ProjectData } from '../../../lib/projects';
-import styles from './ProjectsList.module.scss';
+import { ProjectData } from 'lib/projects';
+import ProjectListItem from 'components/molecules/ProjectListItem/ProjectListItem';
+import { Grid } from './ProjectsList.styles';
 
 interface ProjectsListProps {
   recents?: boolean;
@@ -9,20 +8,9 @@ interface ProjectsListProps {
 }
 
 export default function ProjectsList(props: ProjectsListProps) {
-  const { recents, projects } = props;
+  const { recents = false, projects } = props;
 
-  const title = 'Recent projects';
-  const subtitle = 'View all projects';
-  const link = {
-    url: '/projects',
-    external: false,
-  };
-
-  const sectionTitle = recents && (
-    <SectionTitle title={title} subtitle={subtitle} link={link} />
-  );
-
-  const sortByProjectOrder = (a: ProjectData, b: ProjectData) => {
+  const sortProjectByOrder = (a: ProjectData, b: ProjectData) => {
     return a.order - b.order;
   };
 
@@ -30,19 +18,17 @@ export default function ProjectsList(props: ProjectsListProps) {
     return project.highlight === true;
   };
 
-  const filteredProjects =
-    recents && projects
-      ? projects.sort(sortByProjectOrder).filter(filterHighlightedProjects)
-      : projects;
+  const orderedProjects = projects.sort(sortProjectByOrder);
+
+  const filteredProjects = recents
+    ? orderedProjects.filter(filterHighlightedProjects)
+    : orderedProjects;
 
   return (
-    <section className={styles.section}>
-      {sectionTitle}
-      <div className={styles.grid}>
-        {filteredProjects.map((project) => {
-          return <ProjectListItem key={project.id} {...project} />;
-        })}
-      </div>
-    </section>
+    <Grid recents={recents}>
+      {filteredProjects.map((project) => (
+        <ProjectListItem key={project.id} {...project} />
+      ))}
+    </Grid>
   );
 }
