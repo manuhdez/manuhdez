@@ -8,16 +8,18 @@ const size = {
   desktop: '2560px',
 };
 
-export const device = {
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-  desktop: `(min-width: ${size.desktop})`,
-  desktopL: `(min-width: ${size.desktop})`,
-};
+type DeviceModifier = 'min' | 'max';
+
+export const device = (modifier: DeviceModifier) => ({
+  mobileS: `(${modifier}-width: ${size.mobileS})`,
+  mobileM: `(${modifier}-width: ${size.mobileM})`,
+  mobileL: `(${modifier}-width: ${size.mobileL})`,
+  tablet: `(${modifier}-width: ${size.tablet})`,
+  laptop: `(${modifier}-width: ${size.laptop})`,
+  laptopL: `(${modifier}-width: ${size.laptopL})`,
+  desktop: `(${modifier}-width: ${size.desktop})`,
+  desktopL: `(${modifier}-width: ${size.desktop})`,
+});
 
 const themes = {
   light: 'light',

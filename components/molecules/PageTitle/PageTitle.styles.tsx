@@ -9,7 +9,7 @@ export const TitleContainer = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media ${device.mobileL} {
+  @media ${device('min').mobileL} {
     width: 50%;
 
     ${H1} {

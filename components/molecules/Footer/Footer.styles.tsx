@@ -4,15 +4,16 @@ import { Body } from 'styles/Typography';
 
 const StyledBody = styled(Body)`
   display: flex;
-  align-items: center;
-
+  flex-direction: column;
+  justify-content: center;
   font-weight: 300;
   font-style: initial;
+  text-align: center;
 
-  @media ${device.mobileL} {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  @media ${device('min').tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 

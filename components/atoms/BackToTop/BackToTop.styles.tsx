@@ -9,7 +9,7 @@ export const BackToTopButtonText = styled(Body)`
   transform: translateY(25px);
   transition: opacity 0.5s ease-out, transform 0.3s ease-out;
 
-  @media ${device.mobileL} {
+  @media ${device('max').mobileL} {
     opacity: 1;
     transform: translateY(0);
   }
@@ -37,8 +37,8 @@ export const BackToTopButton = styled.button`
     transform: translateY(0);
   }
 
-  @media ${device.mobileL} {
-    margin-left: 0;
+  @media ${device('max').tablet} {
+    margin: 0 auto;
     margin-top: 2rem;
   }
 

@@ -8,7 +8,7 @@ const TextStyle = (component: StyledComponent<any, any>) => styled(component)`
   margin: 0 auto;
   margin-bottom: 0.5rem;
 
-  @media ${device.tablet} {
+  @media ${device('min').tablet} {
     margin: initial;
     margin-bottom: 1rem;
   }

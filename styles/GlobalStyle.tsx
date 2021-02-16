@@ -58,11 +58,11 @@ export default createGlobalStyle`
       color: var(--rich-black);
     }
 
-    @media ${device.tablet} {
+    @media ${device('min').tablet} {
       --padding-x-body: 5.625rem;
     }
 
-    @media ${device.laptopL} {
+    @media ${device('min').laptopL} {
       --padding-x-body: 11.25rem;
       --padding-y-section: 10rem;
     }
