@@ -1,7 +1,7 @@
 import { getProjectsData, ProjectData } from 'lib/projects';
 import Hero from 'components/molecules/Hero/Hero';
 import ToolsSection from 'components/organisms/ToolsSection/ToolsSection';
-import LinkedinBlock from 'components/organisms/LinkedinBlock/LinkedinBlock';
+import ContactBlock from 'components/organisms/ContactBlock/ContactBlock';
 import ProjectsSection from 'components/organisms/ProjectsSection/ProjectsSection';
 
 interface HomePageProps {
@@ -14,7 +14,7 @@ export default function HomePage({ projects }: HomePageProps) {
       <Hero />
       <ProjectsSection projects={projects} />
       <ToolsSection />
-      <LinkedinBlock />
+      <ContactBlock />
     </main>
   );
 }

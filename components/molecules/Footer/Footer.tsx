@@ -1,5 +1,5 @@
-import BackToTop from 'components/atoms/BackToTop/BackToTop';
-import { StyledFooter, Address } from './Footer.styles';
+import { StyledFooter, Address, SocialLinks } from './Footer.styles';
+import { socialLinks } from 'lib/social';
 
 export default function Footer() {
   const currentYear = new Date(Date.now()).getFullYear();
@@ -8,8 +8,14 @@ export default function Footer() {
     <StyledFooter>
       <Address>
         {`© ${currentYear} - Designed and built by manuhdez with React and Next.js`}
-        <BackToTop />
       </Address>
+      <SocialLinks>
+        {socialLinks.map(({ label, link }) => (
+          <a key={label} href={link} target="_blank" rel="noreferrer noopener">
+            {label}
+          </a>
+        ))}
+      </SocialLinks>
     </StyledFooter>
   );
 }
