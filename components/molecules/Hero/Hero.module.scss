@@ -10,7 +10,7 @@
   padding: 0 var(--padding-x-body);
 
   h1,
-  p {
+  h3 {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 0.5rem;
@@ -28,11 +28,11 @@
     }
   }
 
-  p {
-    @include text_style('body', 'medium');
+  h3 {
+    @include text_style('h3', 'medium');
 
     @media (min-width: $mq-phone) {
-      @include text_style('body-lg', 'book');
+      @include text_style('h3', 'book');
     }
   }
 }
