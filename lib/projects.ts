@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import remark from 'remark';
-import html from 'remark-html';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 export interface ProjectData {
   id: string;
@@ -18,7 +18,7 @@ export interface ProjectData {
   short_description: string;
 }
 
-const projectsDir = path.join(process.cwd(), 'content/projects');
+const projectsDir = path.join(process.cwd(), "content/projects");
 
 export function getProjectsData() {
   // Get file names under /posts
@@ -26,11 +26,11 @@ export function getProjectsData() {
 
   const allProjectsData: ProjectData[] = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+    const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
     const fullPath = path.join(projectsDir, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
@@ -77,7 +77,7 @@ export function getAllProjectsIds(): ProjectsIdsList {
   return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, ''),
+        id: fileName.replace(/\.md$/, ""),
       },
     };
   });
@@ -85,7 +85,7 @@ export function getAllProjectsIds(): ProjectsIdsList {
 
 export async function getProjectData(id: string): Promise<ProjectData> {
   const fullPath = path.join(projectsDir, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
