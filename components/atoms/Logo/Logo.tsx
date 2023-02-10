@@ -10,7 +10,6 @@ export default function Logo() {
 
   return (
     <Link href="/">
-      <a>
         <picture>
           <img
             srcSet={`${small} 24w, ${medium} 77w, ${large} 121w`}
@@ -20,7 +19,6 @@ export default function Logo() {
             alt="logo"
           />
         </picture>
-      </a>
     </Link>
   );
 }

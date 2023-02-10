@@ -21,9 +21,7 @@ export default function SectionTitle(props: SectionTitleProps) {
     if (link && !link.external) {
       return (
         <Link href={link.url}>
-          <a>
             <p>{subtitle}</p>
-          </a>
         </Link>
       );
     }
