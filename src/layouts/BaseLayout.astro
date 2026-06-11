@@ -1,0 +1,44 @@
+---
+import Navbar from '../components/molecules/Navbar/Navbar';
+import Footer from '../components/molecules/Footer/Footer';
+import '../styles/global.scss';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Manu Hdez - Fullstack developer',
+  description = "I'm passionate about software development and product design. I'm a fast-pace learner that loves facing new challenges. I've been working for two years as a full-stack developer mainly focused on creating UI solutions. Always looking for new challenges and opportunities to keep growing in the tech industry as a software developer.",
+  ogTitle = 'Manu Hdez - Fullstack developer',
+  ogDescription = description,
+  ogUrl = 'https://manuhdez.com',
+  ogImage,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={ogUrl} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+  </head>
+  <body>
+    <Navbar client:load />
+    <slot />
+    <Footer client:load />
+  </body>
+</html>

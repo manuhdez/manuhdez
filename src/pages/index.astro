@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/molecules/Hero/Hero';
+import ProjectsList from '../components/organisms/ProjectsList/ProjecstList';
+import ToolsSection from '../components/organisms/ToolsSection/ToolsSection';
+import LinkedinBlock from '../components/organisms/LinkedinBlock/LinkedinBlock';
+import { getProjectsData } from '../lib/projects';
+
+const projects = getProjectsData();
+---
+
+<BaseLayout>
+  <main>
+    <Hero />
+    <ProjectsList recents projects={projects} />
+    <ToolsSection />
+    <LinkedinBlock />
+  </main>
+</BaseLayout>

@@ -1,27 +1,27 @@
 {
-  "name": "with-jest",
+  "name": "portfolio",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.7",
+    "astro": "^6.4.6",
     "gray-matter": "^4.0.3",
-    "next": "13.1.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2"
   },
   "devDependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.1",
-    "identity-obj-proxy": "3.0.0",
-    "sass": "1.26.9",
-    "typescript": "4.9.4"
+    "@types/node": "^18.19.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "sass": "^1.86.3",
+    "typescript": "^5.7.0"
   }
 }

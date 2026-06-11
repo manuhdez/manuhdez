@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectHeader from '../../components/molecules/ProjectHeader/ProjectHeader';
+import MdContent from '../../components/organisms/MdContent/MdContent';
+import { getProjectData, getAllProjectsIds } from '../../lib/projects';
+
+export async function getStaticPaths() {
+  const paths = getAllProjectsIds();
+  return paths.map(({ params }) => ({ params }));
+}
+
+const { id } = Astro.params;
+const projectData = await getProjectData(id);
+const { title, content, short_description } = projectData;
+---
+
+<BaseLayout
+  title={`${title} - Manu Hdez`}
+  ogTitle={title}
+  ogDescription={short_description}
+  ogUrl={`https://manuhdez.com/projects/${id}`}
+  ogImage={`/assets/images/projects/${id}/cover.png`}
+>
+  <link rel="stylesheet" href="/assets/styles/prism.css" />
+  <link rel="stylesheet" href="/assets/styles/prism-vscode.css" />
+  <ProjectHeader {...projectData} />
+  <MdContent content={content} />
+  <script is:inline src="/scripts/prism.js"></script>
+</BaseLayout>

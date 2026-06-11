@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageTitle from '../components/molecules/PageTitle/PageTitle';
+import ProjectsList from '../components/organisms/ProjectsList/ProjecstList';
+import { getProjectsData } from '../lib/projects';
+
+const projects = getProjectsData();
+const title = 'Projects';
+const subtitle =
+  'This is a selection of projects I have develop or contributed to in the last years';
+---
+
+<BaseLayout title="Manu Hdez - Projects" ogTitle="Manu Hdez - Projects">
+  <main>
+    <PageTitle title={title} subtitle={subtitle} />
+    <ProjectsList projects={projects} />
+  </main>
+</BaseLayout>
