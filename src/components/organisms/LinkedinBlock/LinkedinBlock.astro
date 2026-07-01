@@ -1,0 +1,126 @@
+---
+---
+
+<section class="section" id="contact">
+  <div class="texts">
+    <h2>Let's get in touch!</h2>
+    <h3>
+      Feel free to say "Hi" on any of my socials
+      <br />
+      or at{' '}
+      <a class="email_link" href="mailto:hi@manuhdez.com?subject=Hi Manu!">
+        hi@manuhdez.com
+      </a>
+    </h3>
+  </div>
+  <div class="social_links">
+    <div>
+      <a href="https://www.linkedin.com/in/manuhdez/" target="_blank" rel="noreferrer noopener">Linkedin</a>
+      <a href="https://github.com/manuhdez" target="_blank" rel="noreferrer noopener">Github</a>
+    </div>
+    <div>
+      <a href="https://codepen.io/ManuHdez" target="_blank" rel="noreferrer noopener">Codepen</a>
+      <a href="https://dribbble.com/manuhdez" target="_blank" rel="noreferrer noopener">Dribbble</a>
+    </div>
+    <div>
+      <a href="https://twitter.com/manuhdez_com" target="_blank" rel="noreferrer noopener">Twitter</a>
+      <a href="https://www.instagram.com/manu_hdez/" target="_blank" rel="noreferrer noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  $mq-tablet-xl: 820px;
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 6rem var(--padding-x-body);
+    background: $accent;
+
+    @media (max-width: $mq-tablet-xl) {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (prefers-color-scheme: light) {
+      & *::selection {
+        background: $rich-black;
+        color: $pearl-white;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      background: $rich-black;
+    }
+
+    .texts {
+      h2 {
+        max-width: 100%;
+        color: $rich-black;
+
+        @media (min-width: $mq-tablet-xl) {
+          max-width: 50%;
+        }
+        @media (prefers-color-scheme: dark) {
+          color: $pearl-white;
+        }
+      }
+
+      .email_link {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: $rich-black;
+        @include link_underline(0, $rich-black);
+
+        &:hover {
+          color: $pearl-white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          color: $pearl-white;
+          @include link_underline(0, $pearl-white);
+
+          &:hover {
+            color: $accent;
+          }
+        }
+      }
+    }
+
+    .social_links {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 2rem;
+
+      @media (max-width: $mq-tablet-xl) {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 4rem;
+      }
+
+      @media (max-width: $mq-phone) {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      a {
+        display: block;
+        margin-bottom: 2rem;
+        color: $rich-black;
+        text-decoration: none;
+        @include link_hover(0, $rich-black);
+
+        @media (prefers-color-scheme: dark) {
+          color: $pearl-white;
+          @include link_hover(0, $pearl-white);
+        }
+      }
+    }
+  }
+</style>

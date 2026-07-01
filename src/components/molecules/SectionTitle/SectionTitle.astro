@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  link?: {
+    url: string;
+    external: boolean;
+  };
+}
+const { title, subtitle, link } = Astro.props;
+---
+
+<div class="container">
+  <h2>{title}</h2>
+  {
+    !link && <p>{subtitle}</p>
+  }
+  {
+    link && !link.external && (
+      <a href={link.url}><p>{subtitle}</p></a>
+    )
+  }
+  {
+    link && link.external && (
+      <a href={link.url} target="blank" rel="noreferer noopener"><p>{subtitle}</p></a>
+    )
+  }
+</div>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  .container {
+    margin-bottom: 4rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    a,
+    p {
+      @include text_style('body-lg', 'regular');
+      width: auto;
+      margin: 0;
+      display: inline-block;
+      text-decoration: none;
+      color: $rich-black;
+
+      &:hover {
+        color: $success;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: $pearl-white;
+      }
+    }
+
+    a {
+      @include link_hover(-0, $success);
+    }
+  }
+</style>

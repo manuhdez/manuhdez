@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectHeader from '../../components/molecules/ProjectHeader/ProjectHeader';
-import MdContent from '../../components/organisms/MdContent/MdContent';
+import ProjectHeader from '../../components/molecules/ProjectHeader/ProjectHeader.astro';
+import MdContent from '../../components/organisms/MdContent/MdContent.astro';
 import { getProjectData, getAllProjectsIds } from '../../lib/projects';
 
 export async function getStaticPaths() {

@@ -1,0 +1,70 @@
+---
+import Logo from "../../atoms/Logo/Logo.astro";
+
+const navLinksData = [
+    { route: "/projects", title: "Projects", disabled: false },
+    { route: "/#contact", title: "Contact", disabled: false },
+    { route: "/blog", title: "Blog (coming soon)", disabled: true },
+];
+---
+
+<header class="header">
+    <Logo />
+    <nav>
+        <ul class="nav_links">
+            {
+                navLinksData.map(({ route, title, disabled }) => (
+                    <li class={disabled ? "disabled" : undefined}>
+                        <a href={route}>{title}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
+
+<style lang="scss">
+    @use "../../../styles" as *;
+
+    .header {
+        background: $pearl-white;
+        padding: 1.5rem var(--padding-x-body);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav_links {
+            display: flex;
+
+            li {
+                margin-left: 1.5rem;
+                margin-bottom: 0;
+                list-style: none;
+
+                &.disabled {
+                    pointer-events: none;
+                    opacity: 0.3;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            li a {
+                @include text_style("body-lg", "medium");
+                @include link_hover(0, $success);
+                text-decoration: none;
+                color: $rich-black;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            background: $rich-black;
+
+            .nav_links li a {
+                color: $pearl-white;
+            }
+        }
+    }
+</style>

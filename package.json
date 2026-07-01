@@ -9,18 +9,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.7",
     "astro": "^6.4.6",
     "gray-matter": "^4.0.3",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
     "remark": "^14.0.3",
     "remark-html": "^15.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.19.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
     "sass": "^1.86.3",
     "typescript": "^5.7.0"
   }

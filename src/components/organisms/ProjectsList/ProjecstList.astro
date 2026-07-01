@@ -1,0 +1,51 @@
+---
+import ProjectListItem from '../../molecules/ProjectListItem/ProjectListItem.astro';
+import SectionTitle from '../../molecules/SectionTitle/SectionTitle.astro';
+import type { ProjectData } from '../../lib/projects';
+
+interface Props {
+  recents?: boolean;
+  projects: ProjectData[];
+}
+const { recents, projects } = Astro.props;
+
+const title = 'Recent projects';
+const subtitle = 'View all projects';
+const link = { url: '/projects', external: false };
+
+const sortByProjectOrder = (a: ProjectData, b: ProjectData) => a.order - b.order;
+const filterHighlightedProjects = (project: ProjectData) => project.highlight === true;
+
+const filteredProjects = recents && projects
+  ? projects.sort(sortByProjectOrder).filter(filterHighlightedProjects)
+  : projects;
+---
+
+<section class="section">
+  {recents && <SectionTitle title={title} subtitle={subtitle} link={link} />}
+  <div class="grid">
+    {filteredProjects.map((project) => (
+      <ProjectListItem key={project.id} {...project} />
+    ))}
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  .section {
+    padding: var(--padding-y-section) var(--padding-x-body);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 420px;
+    gap: 2rem;
+    grid-auto-flow: dense;
+
+    @media (min-width: $mq-desktop-hd) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

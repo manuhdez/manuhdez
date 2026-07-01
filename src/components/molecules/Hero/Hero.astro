@@ -1,0 +1,46 @@
+---
+---
+
+<section class="hero">
+  <h1>Hi! I'm Manuel Hernández</h1>
+  <h3>Software Engineer with 5+ years of experience in web development</h3>
+</section>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 5rem);
+    padding: 0 var(--padding-x-body);
+
+    h1,
+    h3 {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: $mq-tablet) {
+        max-width: 830px;
+        margin: initial;
+        margin-bottom: 1rem;
+      }
+    }
+
+    h1 {
+      @media (max-width: $mq-phone) {
+        @include text_style('h2', 'extra-bold');
+      }
+    }
+
+    h3 {
+      @include text_style('h3', 'medium');
+
+      @media (min-width: $mq-phone) {
+        @include text_style('h3', 'book');
+      }
+    }
+  }
+</style>

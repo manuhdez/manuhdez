@@ -1,0 +1,50 @@
+---
+import BackToTop from '../../atoms/BackToTop/BackToTop.astro';
+
+const currentYear = new Date(Date.now()).getFullYear();
+---
+
+<footer class="footer">
+  <address>
+    &copy; {currentYear} - Designed and built by manuhdez
+    <BackToTop />
+  </address>
+</footer>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  .footer {
+    padding: 2rem var(--padding-x-body);
+    background: $pearl-white;
+
+    @media (prefers-color-scheme: dark) {
+      background: $rich-black;
+    }
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: $mq-phone) {
+      & > div {
+        flex-direction: column;
+      }
+    }
+
+    address {
+      display: flex;
+      align-items: center;
+      font-style: initial;
+      @include text_style('body', 'light');
+
+      @media (max-width: $mq-phone) {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+</style>

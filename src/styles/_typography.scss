@@ -1,4 +1,5 @@
-@import './airbnb-cereal-font';
+@forward './airbnb-cereal-font';
+@use 'sass:map';
 
 $font-size: (
   'h1': 3.125rem,
@@ -18,8 +19,8 @@ $font-weight: (
 );
 
 @mixin text_style($size, $weight) {
-  font-size: map-get($map: $font-size, $key: $size);
-  font-weight: map-get($map: $font-weight, $key: $weight);
+  font-size: map.get($font-size, $size);
+  font-weight: map.get($font-weight, $weight);
 }
 
 @mixin link_hover($space, $color) {

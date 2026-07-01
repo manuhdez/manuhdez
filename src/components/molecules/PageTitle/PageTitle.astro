@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<div class="container">
+  <h1>{title}</h1>
+  <p>{subtitle}</p>
+</div>
+
+<style lang="scss">
+  @use '../../../styles' as *;
+
+  .container {
+    padding: 0 var(--padding-x-body);
+    padding-top: 8rem;
+
+    @media (min-width: $mq-phone) {
+      width: 50%;
+
+      h1,
+      p {
+        max-width: 520px;
+      }
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      @include text_style('body-lg', 'medium');
+      color: $rich-black;
+    }
+  }
+</style>

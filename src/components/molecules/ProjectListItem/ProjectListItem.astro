@@ -1,0 +1,124 @@
+---
+import type { ProjectData } from "../../lib/projects";
+
+const { id, title, tags, size } = Astro.props as ProjectData;
+
+const imageSrc = `/assets/images/projects/${id}/cover/cover@1x.jpg`;
+const tagsList = tags.slice(0, 3);
+---
+
+<article
+    class={`item ${size === "tall" ? "tall" : ""} ${size === "wide" ? "wide" : ""}`}
+>
+    <div class="item_data">
+        <h3>{title}</h3>
+        <p>{tagsList.join(" - ")}</p>
+    </div>
+    <a href={`/projects/${id}`}>
+        <picture>
+            <source
+                media="(min-width: 2048px)"
+                srcset={`/assets/images/projects/${id}/cover/cover@1x.webp,
+            /assets/images/projects/${id}/cover/cover@1x.jpeg`}
+            />
+            <source
+                media="(min-width: 1024px)"
+                srcset={`/assets/images/projects/${id}/cover/cover@0.75x.webp,
+            /assets/images/projects/${id}/cover/cover@0.75x.jpeg`}
+            />
+            <source
+                srcset={`/assets/images/projects/${id}/cover/cover@0.5x.webp,
+            /assets/images/projects/${id}/cover/cover@0.5x.jpeg`}
+            />
+            <img
+                class="cover_img"
+                loading="lazy"
+                width="1024px"
+                src={imageSrc}
+                alt={title}
+            />
+        </picture>
+        <span style="display: none">{title}</span>
+    </a>
+</article>
+
+<style lang="scss">
+    @use "../../../styles" as *;
+
+    @mixin item_radius() {
+        border-radius: 3px;
+    }
+
+    @mixin item_tall() {
+        grid-row-end: span 2;
+    }
+    @mixin item_wide() {
+        grid-column-end: span 2;
+    }
+
+    .item {
+        height: 100%;
+        position: relative;
+        @include item_radius();
+        height: 420px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        box-shadow: $card-shadow-dark;
+        transition: transform 1s ease-in-out;
+
+        @media (min-width: $mq-tablet) {
+            &:hover {
+                transform: scale(1.025);
+
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .item_data {
+            pointer-events: none;
+            z-index: 1;
+            width: 100%;
+            padding: 3rem 2rem 1.5rem 2rem;
+            color: $pearl-white;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        img {
+            @include item_radius();
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            object-fit: cover;
+            transition: transform 1.5s ease-in-out;
+        }
+
+        &.tall {
+            @include item_tall();
+        }
+
+        &.wide {
+            @include item_wide();
+            img {
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: $mq-tablet) {
+            grid-column-end: span 2;
+
+            &.tall {
+                grid-row-end: span 1;
+            }
+        }
+    }
+</style>

@@ -1,4 +1,4 @@
-@import './typography';
-@import './colors';
-@import './spacing';
-@import './effects';
+@forward './typography';
+@forward './colors';
+@forward './spacing';
+@forward './effects';

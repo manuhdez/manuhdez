@@ -1,0 +1,43 @@
+---
+
+---
+
+<a href="/">
+    <picture class="logo-light">
+        <source
+            srcset="/assets/images/logo/light/24w.svg 24w, /assets/images/logo/light/77w.svg 77w, /assets/images/logo/light/121w.svg 121w"
+            sizes="(max-width: 480px) 12px, (max-width: 768px) 30px, 120px"
+        />
+        <img
+            src="/assets/images/logo/simbolo/light.png"
+            height="35px"
+            alt="logo"
+        />
+    </picture>
+    <picture class="logo-dark">
+        <source
+            srcset="/assets/images/logo/dark/24w.svg 24w, /assets/images/logo/dark/77w.svg 77w, /assets/images/logo/dark/121w.svg 121w"
+            sizes="(max-width: 480px) 12px, (max-width: 768px) 30px, 120px"
+        />
+        <img
+            src="/assets/images/logo/simbolo/light.png"
+            height="35px"
+            alt="logo"
+        />
+    </picture>
+</a>
+
+<style lang="scss">
+    .logo-dark {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .logo-light {
+            display: none;
+        }
+        .logo-dark {
+            display: block;
+        }
+    }
+</style>
